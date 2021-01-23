@@ -1,0 +1,134 @@
+.section {
+    height: 660px;
+}
+
+.intro-section {
+    margin: 80px auto;
+    text-align: center;
+    background-color: $primaryColor;
+    color: $color-white;
+    padding: 30px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+    &__span {
+        color: $primaryColor-light;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+    color: $color-white;
+    margin: 80px 20px 20px 20px;
+}
+
+.grid-item {
+    background-color: $primaryColor;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+    &__img {
+        height: 150px;
+        width: 150px;
+        padding: 15px;
+        border-radius: 30px;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: $primaryColor-light;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 1130px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .section {
+        height: 860px;
+    }
+}
+
+@media only screen and (max-width: 945px) {
+    .grid-item__img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .section {
+        height: 760px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        margin: 50px 10px 10px 10px;
+    }
+
+    .intro-section {
+        width: 500px;
+        padding: 15px;
+    }
+
+    .section {
+        height: 1060px;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .section {
+        height: 1150px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .section {
+        height: 1300px;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .section {
+        height: 1450px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+        .intro-section {
+        width: 350px;
+        height: auto;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .intro-section {
+    width: 250px;
+    height: auto;
+    padding: 5px;
+    }
+
+    .section {
+        height: 1500px;
+    }
+}

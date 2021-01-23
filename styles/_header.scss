@@ -1,0 +1,310 @@
+// --- HEADER --- //
+header {
+    display: flex;
+    align-items: center;
+    background-color: $primaryColor;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    img {
+        height: 30px;
+        width: auto;
+        margin: 5px 20px;
+    }
+}
+
+
+// --- HERO --- //
+.hero {
+    height: 95vh;
+    width: 100%;
+    background-image: url('/images/header-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    animation: drop-Y 0.5s ease;
+
+    &__container {
+        flex: 1;
+        
+        &__picture {
+            animation: drop-X .5s ease;
+        }
+    }
+
+    &__picture {
+        height: 95%;
+        width: auto;
+        margin-top: 50px;
+        animation: sliding 30s linear infinite;
+    }
+
+    &__text-box {
+        margin: 350px 0px 0px 300px;
+        padding-left: 20px;
+        height: 200px;
+        width: 400px;
+        backdrop-filter: blur(8px);
+        border-radius: 10px;
+        box-shadow: 0 2px 1px hsla(0, 0%, 100%, 0.5) inset, 
+                    0 -2px 1px hsla(250, 70%, 5%, 0.3) inset,  
+                    0 -2px 6px hsla(0, 0%, 100%, 0.25) inset;
+        transition: all .5s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: 50px;
+        font-weight: 500;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+    }
+
+    &__text {
+        color: $color-white;
+        margin-bottom: 25px;
+        animation: typing 3s steps(38);
+        overflow:hidden;
+        white-space: nowrap;
+        width: 38ch;
+    }
+
+    &__btn {
+        display: inline-block;
+        height: 35px;
+        width: auto;
+        margin: 0px 25px;
+        animation: flash 25s linear infinite;
+    }
+}
+
+
+// --- MEDIA QUERIES ---- // 
+
+@media only screen and (max-width : 1713px) {
+    .hero {
+        // flex-direction: column;
+
+        &__container__picture {
+            width: 50vw;
+        }
+
+        &__picture {
+            height: 60%;
+            margin-top: 200px;
+            margin-left: -100px;
+        }
+
+        &__text-box {
+            margin: 350px 0px 0px 150px;
+        }
+    }
+}
+
+@media only screen and (max-width : 1175px) {
+    .hero {
+        // flex-direction: column;
+
+        &__container__picture {
+            width: 50vw;
+        }
+
+        &__picture {
+            height: 49%;
+            margin-top: 200px;
+            margin-left: -50px;
+        }
+
+        &__text-box {
+            margin: 350px 0px 0px 100px;
+        }
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    .hero {
+        flex-direction: column;
+        // height: 60vh;
+
+        &__picture {
+            height: 27%;
+            margin-top: 10px;
+            margin-left: 300px;
+        }
+
+        &__text-box {
+            margin: 50px auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hero {
+        flex-direction: column;
+
+        &__picture {
+            height: 27%;
+            margin-top: 10px;
+            margin-left: 300px;
+        }
+
+        &__text-box {
+            margin: 50px auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .hero {
+        flex-direction: column;
+
+        &__picture {
+            height: 27%;
+            margin-top: 10px;
+            margin-left: 75px;
+        }
+
+        &__text-box {
+            margin: 50px auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .hero {
+        
+        &__picture {
+            height: 23%;
+            margin-top: 10px;
+            margin-left: 35px;
+        }
+
+        &__text-box {
+            margin: 50px auto;
+            width: 350px;
+        }
+
+        &__title {
+            font-size: 40px;
+        }
+
+        &__text {
+            font-size: 12px;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .hero {
+
+        &__text-box {
+            margin: 50px auto;
+            padding-left: 5px;
+        }
+    }
+}
+
+@media all and (max-width: 350px) {
+    .hero {
+
+        &__picture {
+            height: 18%;
+            margin-top: 10px;
+            margin-left: 0px;
+        }
+
+        &__title {
+            font-size: 35px;
+        }
+
+        &__text-box {
+            margin: 50px auto;
+            width: 250px;
+            height: 150px;
+        }
+
+        &__text {
+            font-size: 10px;
+        }
+
+        &__btn {
+            display: inline;
+            height: 23px;
+            width: auto;
+        }
+    }
+}
+
+// --- ANIMATION --- //
+
+@keyframes flashBtn {
+    0% {
+      transform: scale(1);
+    }
+
+    98% {
+      transform: scale(1);
+    }
+
+    99% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0ch;
+    }
+
+    100% {
+        width: 38ch;
+    }
+}
+
+@keyframes sliding {
+
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes drop-X {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px); 
+    }
+}
+
+@keyframes drop-Y {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px); 
+    }
+}
+

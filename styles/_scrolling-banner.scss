@@ -1,0 +1,66 @@
+
+.horizontal-scrolling-banner{
+    display: flex;
+    flex-direction: row;
+    background-color: $primaryColor;
+}
+
+.sample-item {
+    display: flex;
+    flex-direction: row;
+    color: $color-white;
+    border: 2px solid $color-white;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.sample-item p{
+    margin-top: 12px;
+    padding: 0px 5px;
+}
+
+.sample-item a {
+    text-decoration: none;
+    color: $color-white;
+}
+
+.sample-item:hover {
+    color: $primaryColor-light;
+    border: 2px solid $primaryColor-light;
+}
+
+.sample-item:hover img{
+    border: 2px solid $primaryColor-light;
+}
+
+.img-banner {
+    height: 50px;
+    width: 50px;
+    border: 1px solid $color-white;
+}
+
+// Scrolling effect
+
+#container {
+    height:75px; 
+    position:relative; 
+    overflow:hidden;
+  }
+  
+.photobanner {
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    overflow:hidden; 
+    white-space: nowrap;
+    animation: bannermove 40s linear infinite;
+}
+
+@keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}

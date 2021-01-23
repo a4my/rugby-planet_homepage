@@ -1,0 +1,179 @@
+.section-3 {
+    background-color: $color-white;
+    height: 850px;
+    text-align: center;
+    margin: 80px auto 0px auto;
+    position: relative;
+
+    &__header {
+        margin: 0px auto 50px auto;
+        background-color: $primaryColor;
+        height: auto;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+        &__title {
+            color: $primaryColor-light;
+            padding: 10px;
+        }
+
+        &__text {
+            color: $color-white;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__video {
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        border: 3px solid $primaryColor-light;
+        height: 400px;
+        width: 711px;
+    }
+
+    &__comment {
+        background-color: $primaryColor;
+        height: auto;
+        width: 710px;
+        margin: 30px auto;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+        &__text {
+            color: $color-white;
+        }
+
+        &__fab {
+            font-size: 30px;
+            color: $color-white;
+            padding: 15px 25px;
+
+            &:hover {
+                color: $primaryColor-light;
+                transform: translateY(-2px)
+            }
+        }
+    }
+
+    &__img-1 {
+        height: 200px;
+        width: auto;
+        opacity: 0.03;
+        position: absolute;
+        top: 27%;
+        left: 10%;
+    }
+
+    &__img-2 {
+        height: 200px;
+        width: auto;
+        opacity: 0.03;
+        position: absolute;
+        top: 27%;
+        right: 10%;
+    }
+}
+
+// Media for the rugby ball png 
+@media only screen and (max-width: 1685px) {
+    .section-3 {
+
+        &__img-1 {
+            left: 10%;
+        }
+
+        &__img-2 {
+            right: 10%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1575px) {
+    .section-3 {
+
+        &__img-1 {
+            left: 5%;
+        }
+
+        &__img-2 {
+            right: 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .section-3 {
+
+        &__img-1 {
+            left: 2%;
+        }
+
+        &__img-2 {
+            right: 2%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .section-3 {
+
+        &__img-1 {
+            display: none;
+        }
+
+        &__img-2 {
+            display: none
+        }
+    }
+}
+
+//media for the rest of the section
+@media only screen and (max-width: 767px) {
+    .section-3 {
+        height: 800px;
+
+        &__video {
+            width: 550px;
+            height: 350px;
+        }
+
+        &__comment {
+            width: 550px;
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .section-3 {
+        height: 700px;
+
+        &__video {
+            width: 400px;
+            height: 250px;
+        }
+
+        &__comment {
+            width: 400px;
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .section-3 {
+        height: 650px;
+
+        &__video {
+            width: 325px;
+            height: 175px;
+        }
+
+        &__comment {
+            width: 325px;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,193 @@
+// --- NAVBAR --- //
+.logo-container {
+  flex: 1;
+}
+
+.navbar {
+    height: 5vh;
+    width: auto;
+    flex: 2;
+    flex-wrap: wrap;
+    overflow: hidden;
+        
+    &__list {
+        display: flex;
+        list-style: none;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+
+    &__item {
+        padding: 0px 30px;
+        animation: flash 25s linear infinite;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover {
+        color: $primaryColor-light;
+      }
+
+      &__active {
+        border: 2px solid $color-white;
+        border-radius: 5px;
+        color: $primaryColor-light;
+        padding: 5px 15px;
+      }
+    }
+}
+
+.rotate:hover {
+    animation: rotate-btn .5s linear 5;
+  }
+  
+// ---- HAMBURGER MENU ---- //
+
+//Option 1
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: $color-white;
+  border-radius: 10px;
+}
+
+// Option 2
+
+
+//---- MEDIA QUERIES ---//
+
+@media all and (max-width: 1300px) {
+
+  .navbar {
+    flex: 6;
+  }
+}
+
+
+@media only screen and (max-device-width: 767px) {
+
+  .navbar {
+    flex: 6;
+
+    &__item {
+      padding: 0px 10px;
+    }
+
+    &__link__active {
+      padding: 1px 10px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+  .logo-container {
+    transform: translateX(-370%);
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar {
+    width: 100%;
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar li {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar__link__active {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  
+  .logo-container {
+    transform: translateX(-300%);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  
+  .logo-container {
+    transform: translateX(-250%);
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  
+  .logo-container {
+    transform: translateX(-200%);
+  }
+}
+
+@media all and (max-width: 300px) {
+  
+  .logo-container {
+    transform: translateX(-175%);
+  }
+}
+
+// --- ANIMATION --- //
+  @keyframes rotate-btn {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes flash {
+      0% {
+        color: #fff;
+        transform: scale(1);
+      }
+
+      98% {
+        color: #fff;
+        transform: scale(1);
+      }
+
+      99% {
+        color: $primaryColor-light;
+        transform: scale(1.1);
+      }
+
+      100% {
+        color: #fff;
+        transform: scale(1);
+      }
+  }
